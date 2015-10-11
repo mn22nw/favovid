@@ -1,0 +1,12 @@
+{
+  "name": "react",
+  "description": "React is a JavaScript library for building user interfaces.",
+  "version": "0.14.0",
+  "keywords": [
+    "react"
+  ],
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "react": "^0.14.0"
+  }
+}
