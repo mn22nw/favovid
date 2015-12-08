@@ -7,9 +7,9 @@ npm start
 open http://localhost:3000
 ```
 **Description**  
-This the beginning of my favovid app.   [VIEW DEMO](http://mn22nw.github.io)     
-The files in the dist folder are placed here [https://github.com/mn22nw/mn22nw.github.io](https://github.com/mn22nw/mn22nw.github.io) 
-in order to get the routes/paths to work properly. 
+This the beginning of my favovid app.   [VIEW DEMO](http://mn22nw.github.io/favovid/)     
+The distribution files are located in the gh-pages branch 
+
 
 It's a bit messy at the moment, with some code and modules that wont be there later, but I thought I could put it up anyways...
 
@@ -24,5 +24,3 @@ It's a bit messy at the moment, with some code and modules that wont be there la
 
 
 Built on top of the [https://github.com/gaearon/react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)
-
-
