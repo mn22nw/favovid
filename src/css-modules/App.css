@@ -1,0 +1,37 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.content {
+	min-height:300px;
+	height: 100% !important;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 65px;
+}
+
+.logo {
+	display:block;
+	float:left;
+	width:50%;
+	margin-top:10px;
+	
+}
+
+.logo img {
+	height:45px;
+}
+
+.navWrapper {
+	width:70%;
+	margin:0 auto;
+	height:80px;
+}
+
+header {
+	background-image:url('../images/header-bk.png');
+	display:block;
+	width:100%;
+	font-family: 'Montserrat', sans-serif;
+	position: fixed;
+    top: 0;
+    right: 0;
+}

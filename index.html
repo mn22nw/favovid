@@ -1,43 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <title>thenewboston</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</head>
-<body>
-
-    <div id="content"></div>
-
-    <script type="text/jsx">
-    
-        var MiasComponent = React.createClass({
-
-            doSomething: function(){
-                console.log("AHA!!" +  this.props.children ); 
-            },
-            render: function() {
-                var props = this.props;
-                return(
-                    <div>
-                    <h2>hey {props.user}</h2>
-                    <p>fact</p>
-                     <a  onClick={this.doSomething} href="#"> CLICKEDYCLOCK </a>
-                    </div>
-                    
-                    ); 
-            }
-        });
-        React.render(<div>
-            <MiasComponent user="mia"> is super awesum</MiasComponent>
-            <MiasComponent user="rumple"> he is so hot</MiasComponent>
-
-            </div>
-            , document.getElementById('content'));
-
-    </script>
-
-</body>
+  <head>
+    <title>Favovid</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body style='margin:0'>
+    <div id='root'>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
 </html>
