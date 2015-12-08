@@ -1,4 +1,4 @@
-# Project for my course RIA-development with JavaScript  2DV607
+# Project for my course RIA-development with JavaScript  2DV607 ![build status](https://travis-ci.org/mn22nw/favovid.svg)
 
 ```
 git clone https://github.com/mn22nw/favovid.git
