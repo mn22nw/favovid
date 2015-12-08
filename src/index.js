@@ -13,17 +13,20 @@ import	store from './store'
 
 //ROUTER
 import { Router, Route } from 'react-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
 import { syncReduxAndRouter } from 'redux-simple-router'
 import Routes         from './routes'
+import { createHistory, useBasename } from 'history'
 
-
-//require('file?name=[name].[ext]!../index.html');  //To be able to copy the html file to dist folder via file-loader webpack
 if (module.hot) {
   module.hot.accept();
 }
 
-const history = createBrowserHistory()
+// Run our app under the /base URL.
+let history = useBasename(createHistory)({
+  basename: '/favovid'
+})
+
+//const history = createBrowserHistory()
 syncReduxAndRouter(history, store)
 
 render(
