@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import styles from '../../CSS-modules/login.css';
-import {Authpanel} from '../authpanel';
+import Authpanel from '../authpanel';
 
 export default class Login extends Component{
   render(){
