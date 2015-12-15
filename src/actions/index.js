@@ -1,5 +1,5 @@
 var authActions = require("./auth"),
-	quotesActions = require("./quotes"),
+	videosActions = require("./videos"),
 	feedbackActions = require("./feedback");
 
-module.exports = Object.assign({},authActions,quotesActions,feedbackActions);
+module.exports = Object.assign({},authActions,videosActions,feedbackActions);

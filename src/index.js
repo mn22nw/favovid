@@ -17,6 +17,9 @@ import { syncReduxAndRouter } from 'redux-simple-router'
 import Routes         from './routes'
 import { createHistory, useBasename } from 'history'
 
+import actions from './actions';
+
+
 if (module.hot) {
   module.hot.accept();
 }
@@ -35,9 +38,8 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-/*
+
 // setup Firebase listeners
 setTimeout(function(){
-	//store.dispatch( actions.startListeningToAuth() );
-	store.dispatch( actions.startListeningToVideos() );
-});  */
+	store.dispatch( actions.startListeningToAuth() );
+});

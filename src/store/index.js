@@ -5,13 +5,9 @@ the Provider element from ReactRedux, which allows smart components to `connect`
 
 import initialState from "./initialstate"
 import thunk from 'redux-thunk' // allows us to use asynchronous actions
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import reducers from './reducers'
-import { routeReducer } from 'redux-simple-router'
+import { createStore,  applyMiddleware } from 'redux'
+import rootReducer from './reducers'
 
-const reducer = combineReducers(Object.assign({}, reducers, {
-  routing: routeReducer
-}))
 
 // A super-simple logger
 var logger = store => next => action => {
@@ -22,5 +18,5 @@ var logger = store => next => action => {
 }
 
 
-module.exports = applyMiddleware(thunk,logger)(createStore)(reducer,initialState);
+module.exports = applyMiddleware(thunk,logger)(createStore)(rootReducer,initialState);
 

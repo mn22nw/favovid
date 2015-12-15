@@ -36,6 +36,6 @@ module.exports = function(currentstate,action){
 			newstate = _.cloneDeep(currentstate);
 			newstate.states[action.qid] = C.SUBMITTING_QUOTE;
 			return newstate;
-		default: return currentstate || initialState.quotes;
+		default: return currentstate || initialState.videos;
 	}
 };
