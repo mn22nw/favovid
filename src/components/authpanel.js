@@ -9,10 +9,6 @@ import actions from '../actions';
 
 var C = require("../constants");
 
-//alert(actions.currently);
-
-//why is auth.currently = undefined ?
-
 class Authpanel extends Component{
   render(){
 
