@@ -7,12 +7,9 @@ export default class Navigation extends Component {
     return (
       <div className={styles.navigation}>
         <nav>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/about'>About</Link></li>
-            <li><Link to='/login'>Log In</Link></li>
-            <li><Link to='/dashboard'>Dashboard</Link></li>
-          </ul>
+            <Link to='/about' activeClassName={styles.current} >About</Link>
+            <Link to='/login' activeClassName={styles.current}>Log In</Link>
+            <Link to='/dashboard' activeClassName={styles.current}>Dashboard</Link>
         </nav>
       </div>
     );

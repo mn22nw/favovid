@@ -6,6 +6,7 @@ const { Link } = require('react-router');
 import styles from '../css-modules/authpanel.css';
 //import constants from '../constants';
 import actions from '../actions';
+import { pushPath } from'redux-simple-router';
 
 var C = require("../constants");
 
@@ -19,6 +20,7 @@ class Authpanel extends Component{
 				<div className="styles.authpanel">
 					<span>Logged in as {auth.username}.</span>
 					{' '}<button onClick={p.logoutUser}>Log out</button>
+					<button onClick={() => pushPath('/dashboard')}>Go to /dashboard</button>
 				</div>
 			);
 			case C.AWAITING_AUTH_RESPONSE: return (

@@ -1,24 +1,17 @@
 .navigation {
-	padding:10px;
 	float:right;
 
 }
-.navigation ul {
-	list-style: none;
-	margin-left:-2.5em;
-}
 
-.navigation ul li{
-	display:inline;
-	padding:10px;
-
-}
-.navigation ul li a {
-	color:#000;
+.navigation a {
+	display:block;
+	float:left;
 	text-decoration: none;
+	line-height: 60px;
+	border-top:5px solid #FFF;
+	padding: 0 10px;
 }
 
-
-a:active {
-	color:#000;
+.current {
+	border-top:5px solid #77D481 !important;
 }
