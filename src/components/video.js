@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import YouTube from 'react-youtube';
 var ptypes = React.PropTypes;
 
 export class Video extends Component {
@@ -11,10 +12,17 @@ export class Video extends Component {
 		// redux action hookups, set up below
 		reset: ptypes.func.isRequired
 	}
+
+  const opts = {
+    height: 315,
+    width: 560
+  }
     return (
      <div onClick={this._handleClick} >
-     
-     <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+ this.props.id}  frameborder="0" allowfullscreen></iframe>
+     <YouTube
+      videoId={this.props.id}
+      opts={opts}
+     />
      </div>
     );
   }
