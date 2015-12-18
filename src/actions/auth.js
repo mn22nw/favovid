@@ -6,12 +6,18 @@ var C = require("../constants"),
 	Firebase = require("firebase"),
 	fireRef = new Firebase(C.FIREBASE);
 
+import { updatePath } from 'redux-simple-router';
+
 module.exports = {
 	// called at app start
 	startListeningToAuth: function(){
 		return function(dispatch,getState){
 			fireRef.onAuth(function(authData){
 				if (authData){ 
+
+					//add to database here??
+					
+					
 					dispatch({
 						type: C.LOGIN_USER,
 						uid: authData.uid,

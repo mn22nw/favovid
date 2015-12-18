@@ -1,7 +1,31 @@
-.login {
-	background:yellow;
+.authpanel {
+	margin:50px 5% 0 0;
+	width:45%;
+	min-height: 200px;
+	float:right;
+	/*background:#F4F2F2;*/
 }
 
-.login h2 {
-	padding:10px;
+.authpanel a{
+	margin:0 auto;
+	margin-top:10px;
+	display:block;
+	width:80%;
+	background:#FFF;
+	text-align: center;
+	line-height:80px;
+	text-decoration: none;
+	font-size:1.3em;
 }
+
+.authpanel a:active {
+	color:#000;
+ }
+
+
+.authpanel img {
+	width:27%;
+	margin-left:20px;
+	vertical-align: middle;
+}
+

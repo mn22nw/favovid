@@ -1,0 +1,61 @@
+/** dashboard *
+--------------------------------------------------------------------- */
+#videoboardContainer {
+	margin:0 auto;
+	margin-left:5%;
+	margin-top:20px;
+	background:#222;
+	/*background: url(../pics/bk.jpg) center 0; */
+	background-image: url('../images/gradient.png');
+	background-repeat:repeat-y;
+	background-size:contain;
+	clear:both;
+	box-shadow: inset 0px 0px 30px 10px rgba(0,0,0,0.4);
+	border-radius:25px;
+	min-width:500px;
+	min-height:800px;
+	height:100%; 
+	height:auto !important; 
+	width:90%;	
+	border:5px solid #FFF;
+	padding-bottom:30px;
+	overflow:hidden; /*http://stackoverflow.com/questions/3921761/floating-image-to-the-left-changes-container-divs-height*/
+	}	
+
+.dashboardWrapper {
+	min-height:500px;
+	height:100% auto !important;
+	background: #8CE798;
+	padding: 20px 0;
+
+}
+
+
+#videoBoard {
+	text-align:justify;
+	width:96%;
+	height:96%;
+	height:auto !important; 
+	margin: 0 auto;	  	
+	}
+
+
+	/** Dashboard-header **
+----------------------------------------------------------*/
+
+.dashboardHeader {
+	padding: 1% 2% 0 2%;
+	overflow: hidden;
+}
+
+.dashboardHeader h2 {
+	float:left;
+}
+
+.authStatus {
+	line-height:70px;
+	float:right;
+	color:#FFF;
+}
+
+

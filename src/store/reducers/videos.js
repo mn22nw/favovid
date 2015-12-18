@@ -24,9 +24,9 @@ module.exports = function(currentstate,action){
 			return Object.assign({},currentstate,{
 				submittingnew: false
 			});
-		case C.START_QUOTE_EDIT:
+		case C.LOAD_VIDEO:
 			newstate = _.cloneDeep(currentstate);
-			newstate.states[action.qid] = C.EDITING_QUOTE;
+			newstate.states[action.vid] = C.EDITING_QUOTE;
 			return newstate;
 		case C.FINISH_QUOTE_EDIT:
 			newstate = _.cloneDeep(currentstate);

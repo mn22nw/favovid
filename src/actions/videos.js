@@ -57,7 +57,11 @@ module.exports = {
 			}
 		};
 	},
-	submitNewQuote: function(content){
+	loadVideo: function(vid) {
+		return {type:C.LOAD_VIDEO,vid};
+	}
+	,
+	submitNewVideo: function(content){
 		return function(dispatch,getState){
 			var state = getState(),
 				username = state.auth.username,

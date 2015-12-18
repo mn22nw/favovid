@@ -3,37 +3,43 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 const { Link } = require('react-router');
-import styles from '../css-modules/authpanel.css';
+
 //import constants from '../constants';
 import actions from '../actions';
-import { pushPath } from'redux-simple-router';
+import { updatePath } from 'redux-simple-router'
 
 var C = require("../constants");
+
+//Styles and images
+import styles from '../css-modules/authpanel.css';
+//import googleUrl from '../images/google-logo.svg';
 
 class Authpanel extends Component{
   render(){
 
       	var p = this.props, auth = p.auth;
-		
-		switch(auth.currently){
-			case C.LOGGED_IN: return (
-				<div className="styles.authpanel">
-					<span>Logged in as {auth.username}.</span>
-					{' '}<button onClick={p.logoutUser}>Log out</button>
-					<button onClick={() => pushPath('/dashboard')}>Go to /dashboard</button>
-				</div>
-			);
-			case C.AWAITING_AUTH_RESPONSE: return (
-				<div className="styles.authpanel">
-					<button disabled> authenticating...</button>
-				</div>
-			);
-			default: return (
-				<div className="styles.authpanel">
-					<button onClick={p.attemptLogin}>Log in</button>
-				</div>
-			);
-		}
+      	
+      	if (auth.currently == C.LOGGED_IN) {
+	      		p.redirectToDashBoard()
+	    }
+
+		return (
+		  <section>
+
+		  	<div className={styles.authpanel}>
+		      {(() => {
+		        switch (auth.currently) {
+		          case C.AWAITING_AUTH_RESPONSE: return <h1>Authenticating...</h1>
+
+		          default: return <a href='#' onClick={p.attemptLogin}>
+		          	Login with <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"  alt='google-logo' />
+		          	</a>
+		          		
+		        }
+		      })()}
+		      </div>
+		  </section>
+		);
   }
 };
 
@@ -46,10 +52,10 @@ var mapStateToProps = function(appState){
 var mapDispatchToProps = function(dispatch){
 	return {
 		attemptLogin: function(){ dispatch(actions.attemptLogin()); },
-		logoutUser: function(){ dispatch(actions.logoutUser()); }
+		logoutUser: function(){ dispatch(actions.logoutUser()); },
+		redirectToDashBoard: function() {dispatch(updatePath('/dashboard'))}
 	}
 };
 
 module.exports = connect(mapStateToProps,mapDispatchToProps)(Authpanel); 
-
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Video} from  './Video.js'
 var _ = require("lodash");
 
-export class VideoList extends Component {
+export default class VideoList extends Component {
   constructor() {
   super();
   this._handleClick = this._handleClick.bind(this);

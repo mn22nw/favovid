@@ -10,8 +10,20 @@
 	line-height: 60px;
 	border-top:5px solid #FFF;
 	padding: 0 10px;
+	color:#000;
+}
+.navigation a:hover {
+	border-top:5px solid #77D481;
+}
+.navigation a:active, .navigation a:visited {
+	color:#000;
 }
 
 .current {
 	border-top:5px solid #77D481 !important;
+}
+
+.logOutWrapper {
+	display:inline-block;
+	line-height: 60px;
 }

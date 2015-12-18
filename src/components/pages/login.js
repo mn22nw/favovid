@@ -9,7 +9,6 @@ export default class Login extends Component{
     return (
     	<div className={styles.login}>
     		
-    		<h2>Login here....</h2>
     		<Authpanel />
     	</div>
     );

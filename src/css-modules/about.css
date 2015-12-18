@@ -1,0 +1,10 @@
+.about {
+	background: #8CE798;
+	min-height:800px;
+}
+
+.aboutWrapper {
+	margin:0 auto;
+	padding-top:30px;
+	width:80%;
+}
