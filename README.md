@@ -13,13 +13,13 @@ The distribution files are located in the gh-pages branch
 
 It's a bit messy at the moment, with some code and modules that wont be there later, but I thought I could put it up anyways...
 
-**WHAT'S UP NEXT**  -  *If you want to contribute, you could have a look at theese:*   
+**WHAT'S UP NEXT**  -  *If you want to contribute, you could have a look at these:*   
 
 * Fix navigation (the current menu-link should not be clickable) see [issue#3](https://github.com/mn22nw/favovid/issues/3)
-* Change routes / block routes depening on auth-status - the solution I have not is not working since it leaves the component upure
-* When pressing the playbutton, it should load the iframe and hide the image. (I have images first, since they load faster)
-* Get the title from the youtube api
-* Test to implement draggable using [interact.js](http://interactjs.io/)  
+* Change routes / block routes depening on auth-status - the solution I have now is not working since it leaves the component upure
+* When pressing the playbutton, it should load the iframe and hide the image etc. (imgContainer). (I have images first, since they load faster)
+* Get the titles from the youtube api
+* Test to implement dragging using [interact.js](http://interactjs.io/)  
     **Things I might need to do myself:**
     * Connecting to firebase and get youtubeIds from there instead of json - based on userid
     * Adding remove buttons etc. at the bottom of the videobox
