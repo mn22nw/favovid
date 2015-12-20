@@ -5,19 +5,14 @@
 }
 .videoDiv {
 		display: block;
-			width:360px !important;
-			height:350px;
-			margin:0 auto;
-			clear:both;
-			outline:0;
-			border:0; 
-		box-shadow:5px 5px 10px #160b02;
-		padding:5px;
-		background:#FFF;
-		/* cursor:move; background:#2D8C36;*/
+		float:left;
 		margin:6px;
 		margin-top:10px;
-		float:left;
+		width:360px;
+		height:300px;
+		box-shadow:5px 5px 10px #160b02;
+		padding-top:5px;
+		background:#FFF;	
 		border-radius:5px;
 	}
 
@@ -44,7 +39,86 @@
         height: 100%;
         border:0;
     }	
-    .videoWrapper img {
-    	width:100%;
-    }
+   
+
+/** PLAYBUTTON WITH IMAGE UNDER  *
+---------------------------------------------------------------------- */
+	.imgContainer {
+	   width: 100%;
+	   position: relative;
+	   margin-top:11%;
+		}
 	
+	.imgContainer img {
+		width:100%;
+		opacity:0.6;
+	}
+
+	.playbutton:hover ~ img {
+		opacity:1;
+	}
+
+	.playbutton {
+	   float: left;
+	   position: absolute;
+	   left:0;
+	   top: 0;
+	   z-index: 1000;
+	   width:100%;
+	   padding-top:60%;
+	   background-image: url('../images/play-button.png');
+	   background-size:30%;
+	   background-position: 0;
+	   background-repeat:no-repeat;
+	   background-position: center center;
+	   color: #FFFFFF;
+	   font-weight: bold;
+	}
+	
+	.playbutton:hover , playbutton:active {
+		background-image: url('../images/playbutton-active.png');
+		background-size:40%;
+	}
+
+
+/** BUTTONS  *
+---------------------------------------------------------------------- */
+	.title { 
+		margin:10px 5px 5px 20px;
+	    width:60%;
+	    float:left;
+		text-decoration:none;
+		display:block;
+		text-align:left;
+		font-family: Arial, Helvetica, sans-serif;
+		color:#a5a5a5;	
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    line-height: 16px;     /* fallback */
+	    max-height: 32px;      /* fallback */
+	    -webkit-line-clamp: 1; /* number of lines to show */
+	    -webkit-box-orient: vertical;
+
+	}
+	.title:hover {
+		color:#000;
+	}
+	
+					
+	/*Exitbutton*/
+	.exitButton, .dragButton   {
+					display:block;					
+					text-decoration:none;
+					background: url('../images/draggable-button.png') no-repeat;
+					text-indent:100%;
+					white-space:nowrap;
+					overflow:hidden;
+					background-size:100%;
+					width:30px;
+					height:30px;
+					float:right;
+					margin-right:7px;
+					cursor:move;}	
+					
+

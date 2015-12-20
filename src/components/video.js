@@ -21,10 +21,13 @@ export class Video extends Component {
 
       return (
        <div onClick={this._handleClick} className={styles.videoDiv}>
-         <a href ="#" class="exitButton">X</a>
-          <a href ="#" class="title">{this.props.title}</a>
-         <img src={"http://img.youtube.com/vi/"+ this.props.id +"/mqdefault.jpg"} />
-         <button onClick={this.loadVideo.bind(this,this.props.id)}>Load video</button>
+        <a href ="#" className={styles.title}>The title here...</a>
+         <a href ="#" className={styles.dragButton}>X</a>
+          <a href ="#" className={styles.title}>{this.props.title}</a>
+          <div className={styles.imgContainer} onClick={this.loadVideo.bind(this,this.props.id)}>
+            <a href="#" className={styles.playbutton}></a>
+            <img src={"http://img.youtube.com/vi/"+ this.props.id +"/mqdefault.jpg"} data-pin-no-hover="true" alt="thumbnail" />
+          </div>
        </div>
       );
   }
@@ -39,6 +42,7 @@ export class Video extends Component {
       console.log('I was clicked', this.props.id)
  }
 }
+
 
 /*
 // now we connect the component to the Redux store:

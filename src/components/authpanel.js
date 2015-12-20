@@ -12,7 +12,6 @@ var C = require("../constants");
 
 //Styles and images
 import styles from '../css-modules/authpanel.css';
-//import googleUrl from '../images/google-logo.svg';
 
 class Authpanel extends Component{
   render(){
@@ -33,8 +32,7 @@ class Authpanel extends Component{
 
 		          default: return <a href='#' onClick={p.attemptLogin}>
 		          	Login with <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"  alt='google-logo' />
-		          	</a>
-		          		
+		          	</a>	          		
 		        }
 		      })()}
 		      </div>

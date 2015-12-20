@@ -12,6 +12,22 @@ import Dashboard              from './components/pages/dashboard';
 import Login                  from './components/pages/login';
 import NotFound               from './components/pages/not_found';
 
+/* 
+function redirectToLogin(nextState, replaceState) {
+  if (!auth.loggedIn()) {
+    replaceState({
+      nextPathname: nextState.location.pathname
+    }, '/login')
+  }
+}
+
+function redirectToDashboard(nextState, replaceState) {
+  if (auth.loggedIn()) {
+    replaceState(null, '/')
+  }
+}
+
+*/
 
 export default (
   <Route path="/" component={App}>
