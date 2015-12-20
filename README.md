@@ -18,9 +18,12 @@ It's a bit messy at the moment, with some code and modules that wont be there la
 * Fix navigation (the current menu-link should not be clickable) see [issue#3](https://github.com/mn22nw/favovid/issues/3)
 * Change routes / block routes depening on auth-status - the solution I have not is not working since it leaves the component upure
 * When pressing the playbutton, it should load the iframe and hide the image. (I have images first, since they load faster)
-
+* Get the title from the youtube api
+* Test to implement draggable using [interact.js](http://interactjs.io/)  
     **Things I might need to do myself:**
     * Connecting to firebase and get youtubeIds from there instead of json - based on userid
+    * Adding remove buttons etc. at the bottom of the videobox
+    * Add inputfield on top of the 'videoboardContainer' where you can add a new youtubevideo 
 
 
 Built on top of the [https://github.com/gaearon/react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)
