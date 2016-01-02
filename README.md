@@ -16,7 +16,6 @@ It's a bit messy at the moment, with some code and modules that wont be there la
 **WHAT'S UP NEXT**  -  *If you want to contribute, you could have a look at these:*   
 
 * Fix navigation (the current menu-link should not be clickable) see [issue#3](https://github.com/mn22nw/favovid/issues/3)
-* Change routes / block routes depening on auth-status - the solution I have now is not working since it leaves the component upure
 * Test to implement dragging using [interact.js](http://interactjs.io/)  
 
     **Things I might need to do myself:**
@@ -25,7 +24,8 @@ It's a bit messy at the moment, with some code and modules that wont be there la
     * Add inputfield on top of the 'videoboardContainer' where you can add a new youtubevideo 
 
 ***Completed features:***   
-* When pressing the playbutton, it loads the iframe and hide the image etc. (imgContainer). (I have images first, since they load faster)
+* When pressing the playbutton it loads the iframe and hides the image etc. (imgContainer). (I have images first, since they load faster)
+* Restricted routes depening on auth-status
 
 
 Built on top of the [https://github.com/gaearon/react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)

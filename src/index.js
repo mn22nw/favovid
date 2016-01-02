@@ -23,6 +23,7 @@ import actions from './actions';
 if (module.hot) {
   module.hot.accept();
 }
+
 let history = createHistory();
 /*
 // Run our app under the /base URL.
