@@ -11,15 +11,18 @@ import { updatePath } from 'redux-simple-router'
 export class Home extends Component {
   
   componentDidMount() { 
+    console.log('Auth currently = ', this.props.auth.currently )
+   
     if(this.props.auth.currently == C.LOGGED_IN) {
       this.props.redirectToDashBoard();
     }
   }
-
+  
   render() {
-  const {increase, decrease, number} = this.props; 
-
+  const {increase, decrease, number, auth} = this.props; 
+  
   return (
+
     <div className={styles.homeWrapper}>
     <h2 className={styles.startMsg}> Store and sort your favourite Youtube-videos!</h2>
     <div className={styles.content} >
@@ -39,9 +42,6 @@ export class Home extends Component {
   );
     }
 };
-
-
-
 
 // now we connect the component to the Redux store:
 var mapStateToProps = function(appState){
