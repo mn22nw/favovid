@@ -5,7 +5,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import VideoList from  '../videolist'
-var data = require('../../data/videos.json'); 
 import actions from '../../actions';
 import styles from '../../CSS-modules/dashboard.css';
 import { updatePath } from 'redux-simple-router';
@@ -34,7 +33,7 @@ export class Dashboard extends React.Component{
 						</div>		    			
 			    		<hr />
 			    		
-			    		<VideoList data= {data} />
+			    		<VideoList  />
 	    			</div>
 	    		</div>
 			);

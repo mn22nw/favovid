@@ -19,7 +19,7 @@ module.exports = {
 	videos: {
 		hasreceiveddata: false,
 		submittingnew: false,
-		states: {}, // this will store per quote id if we're reading, editing or awaiting DB response
+		states: {}, // this will store per video id if we're reading, playing, editing or awaiting DB response
 		data: {} // this will contain firebase data
 	}
 };

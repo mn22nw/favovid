@@ -40,6 +40,9 @@ export class Home extends Component {
     }
 };
 
+
+
+
 // now we connect the component to the Redux store:
 var mapStateToProps = function(appState){
   return {number:appState.count.number, auth:appState.auth};

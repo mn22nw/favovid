@@ -3,6 +3,9 @@
 .videoContainer {
 	float:left;
 }
+
+
+
 .videoDiv {
 		display: block;
 		float:left;
@@ -23,6 +26,7 @@
 			outline:0; border:0;}
 
 .videoWrapper {
+	clear:both;
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;

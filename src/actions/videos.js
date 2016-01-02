@@ -4,7 +4,7 @@ This module contains action creators dealing with `appState.quotes`
 
 var C = require("../constants"),
 	Firebase = require("firebase"),
-	videosRef = new Firebase(C.FIREBASE).child("youtubeid"),
+	videosRef = new Firebase(C.FIREBASE).child("videos"),
 	utils = require("../utils");
 
 module.exports = {
@@ -57,8 +57,8 @@ module.exports = {
 			}
 		};
 	},
-	loadVideo: function(vid) {
-		return {type:C.LOAD_VIDEO,vid};
+	loadVideo: function(youtubeid) {
+		return {type:C.LOAD_VIDEO, youtubeid};
 	}
 	,
 	submitNewVideo: function(content){

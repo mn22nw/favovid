@@ -11,7 +11,7 @@ See `initialstate.js` for a clear view of what it looks like!
 module.exports = function(currentstate,action){
 	var newstate;
 	switch(action.type){
-		case C.RECEIVE_QUOTES_DATA:
+		case C.RECEIVE_VIDEO_DATA:
 			return Object.assign({},currentstate,{
 				hasreceiveddata: true,
 				data: action.data
@@ -26,7 +26,7 @@ module.exports = function(currentstate,action){
 			});
 		case C.LOAD_VIDEO:
 			newstate = _.cloneDeep(currentstate);
-			newstate.states[action.vid] = C.EDITING_QUOTE;
+			newstate.states[action.youtubeid] = C.PLAY_VIDEO;
 			return newstate;
 		case C.FINISH_QUOTE_EDIT:
 			newstate = _.cloneDeep(currentstate);
