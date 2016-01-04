@@ -16,20 +16,18 @@ export class Dashboard extends React.Component{
  	const {logoutUser, auth} = this.props;
 
   	return (
-				<div className={styles.dashboardWrapper}>
-					<div id={styles.videoboardContainer} > 
-						<div className={styles.dashboardHeader}>
-							<h2>Dashboard</h2>
-							<div className={styles.authStatus}>
-								<span>Logged in as {auth.username}.</span>
+				<div id={styles.dashboardWrapper} > 
+					<div className={styles.dashboardHeader}>
+						<h2>Dashboard</h2>
+						<div className={styles.authStatus}>
+							<span>Logged in as {auth.username}.</span>
 
-							</div>
-						</div>		    			
-			    		<hr />
-			    		
-			    		<VideoList  />
-	    			</div>
-	    		</div>
+						</div>
+					</div>		    			
+		    		<hr />
+		    		
+		    		<VideoList  />
+    			</div>
 			);
 
 		}

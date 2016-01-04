@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import YouTube from 'react-youtube';
 import styles from '../css-modules/video.css'
 import actions from '../actions';
+
+import Draggable from 'react-draggable'; // The default
+
 var C = require("../constants");
 
-var ptypes = React.PropTypes;
 
 export class Video extends Component {
   constructor() {
@@ -13,7 +15,28 @@ export class Video extends Component {
   this._handleClick = this._handleClick.bind(this);
  }
 
+ handleDrag(e, ui) {
+      var {left, top} = this.state.deltaPosition;
+      this.setState({
+        deltaPosition: {
+          left: left + ui.deltaX,
+          top: top + ui.deltaY,
+        }
+      });
+    }
+
+    onStart() {
+      console.log('it starts')
+    }
+
+
+    onStop() {
+      //this.setState({activeDrags: --this.state.activeDrags});
+    }
+
   render() {
+    var drags = {onStart: this.onStart, onStop: this.onStop};
+
     var p = this.props;
     const opts = {
       height: 315,
@@ -29,29 +52,36 @@ export class Video extends Component {
     console.log(p.state , ' <---- STATE');
     if (p.state === C.PLAY_VIDEO) {;
       return (
-        <div onClick={this._handleClick} className={styles.videoDiv}>
-        <a href ="#" className={styles.title}>{this.props.title}</a>
-         <a href ="#" className={styles.dragButton}>X</a>
-          <div className={styles.videoWrapper}>
-           <YouTube
-              videoId={this.props.id}
-              opts={opts} />
+         <Draggable bounds="parent" handle="strong" {...drags}>
+            <div className={styles.box}>
+              <div onClick={this._handleClick} className={styles.videoDiv}>
+                <a href ="#" className={styles.title}>{this.props.title}</a>
+                <strong className={styles.dragButton}>X</strong>
+                <div className={styles.videoWrapper}>
+                   <YouTube
+                      videoId={this.props.id}
+                      opts={opts} />
+                 </div>
+                </div>
+            </div>
+          </Draggable>  
 
-         </div>
-         </div>
         );
     }
     else {
-      return (
-       <div onClick={this._handleClick} className={styles.videoDiv}>
-        <a href ="#" className={styles.title}>{this.props.title}</a>
-         <a href ="#" className={styles.dragButton}>X</a>
-          
-          <div className={styles.imgContainer} onClick={p.play}>
-            <a href="#" className={styles.playbutton}></a>
-            <img src={"http://img.youtube.com/vi/"+ this.props.id +"/mqdefault.jpg"} data-pin-no-hover="true" alt="thumbnail" />
-          </div>
-       </div>
+      return (       
+         <Draggable bounds="parent" handle="strong" {...drags}>
+            <div className={styles.box}>
+              <div onClick={this._handleClick} className={styles.videoDiv}>
+                <a href ="#" className={styles.title}>{this.props.title}</a>
+                <strong className={styles.dragButton}>X</strong>
+                <div className={styles.imgContainer} onClick={p.play}>
+                  <a href="#" className={styles.playbutton}></a>
+                  <img src={"http://img.youtube.com/vi/"+ this.props.id +"/mqdefault.jpg"} data-pin-no-hover="true" alt="thumbnail" />
+                </div>
+              </div>
+            </div>
+          </Draggable>     
       );
     }
   }
@@ -66,6 +96,20 @@ export class Video extends Component {
       console.log('I was clicked', this.props.id)
  }
 }
+
+/*
+<div onClick={this._handleClick} className={styles.videoDiv}>
+        <a href ="#" className={styles.title}>{this.props.title}</a>
+         <a href ="#" className={styles.dragButton}>X</a>
+          
+          <div className={styles.imgContainer} onClick={p.play}>
+            <a href="#" className={styles.playbutton}></a>
+            <img src={"http://img.youtube.com/vi/"+ this.props.id +"/mqdefault.jpg"} data-pin-no-hover="true" alt="thumbnail" />
+          </div>
+       </div>
+
+*/
+
 
 
 /*

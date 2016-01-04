@@ -17,10 +17,11 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home}/>
     <Route path="about" component={About}/>
-    <Route path="dashboard" component={requireAuthentication(Dashboard)} />
+    <Route path="dashboard" component={Dashboard} />
     <Route path="login" component={Login}/>
     <Route path="*" component={NotFound}/>
   </Route>
 );
 
 
+//<Route path="dashboard" component={requireAuthentication(Dashboard)} />

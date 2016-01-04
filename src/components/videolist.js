@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Video} from  './Video.js'
-var _ = require("lodash");
+import styles from '../CSS-modules/videoList.css';
 import actions from '../actions';
 var C = require("../constants");
+var _ = require("lodash");
 
 
 
@@ -30,7 +31,7 @@ export class VideoList extends Component {
 
 
     return (
-     <div className='videos' >
+     <div className={styles.videosWrapper}  >
      	 {videos}
      </div>
     );
@@ -40,6 +41,7 @@ export class VideoList extends Component {
  }
 }
 
+//className:videos
 
 var mapStateToProps = function(appState){
   return {
