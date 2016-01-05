@@ -33,7 +33,8 @@ class Registerpanel extends Component {
 		  	<div className={styles.registerpanel}>
 		  		<p>Sign up with email</p>		  		
 
-		  		<form className="newUserform" onSubmit={this.createUserWithEmail.bind}>
+		  		<form className="newUserform" onSubmit={this.createUserWithEmail.bind(this)}>
+
 					<input ref='email' type='text' placeholder='email' />
 			  		<input ref='password' type='text' placeholder='password' />
 
