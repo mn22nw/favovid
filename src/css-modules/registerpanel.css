@@ -1,0 +1,39 @@
+
+.registerpanel {
+	margin:0 auto;
+	min-height: 200px;
+	padding-left:30px;
+}
+
+.registerpanel input {
+	display:block;
+	padding:3%;
+	width:74%;
+	margin-top:30px;
+}
+
+.registerpanel a{
+	margin:0 auto;
+	margin-top:10px;
+	display:block;
+	padding:2%;
+	width:76%;
+	background:#FFF;
+	text-align: center;
+	line-height:80px;
+	text-decoration: none;
+	font-size:1.3em;
+	margin-left:0;
+}
+
+.registerpanel a:active {
+	color:#000;
+ }
+
+
+.registerpanel img {
+	width:60%;
+	vertical-align: middle;
+	float:left;
+}
+

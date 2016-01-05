@@ -24,6 +24,7 @@ export class Navigation extends Component {
             default: 
               return <nav> 
                 <Link to='/about' activeClassName={styles.current} >About</Link>
+                <Link to='/signUp' activeClassName={styles.current}>Sign up</Link> 
                 <Link to='/login' activeClassName={styles.current}>Log In</Link> 
                 </nav>
               }

@@ -10,6 +10,7 @@ import Home                   from './components/pages/home';
 import About                  from './components/pages/about';
 import Dashboard              from './components/pages/dashboard';
 import Login                  from './components/pages/login';
+import SignUp                  from './components/pages/signUp';
 import NotFound               from './components/pages/not_found';
 import {requireAuthentication} from './components/authenticatedComponent';
 
@@ -18,6 +19,7 @@ export default (
     <IndexRoute component={Home}/>
     <Route path="about" component={About}/>
     <Route path="dashboard" component={Dashboard} />
+    <Route path="signUp" component={SignUp}/>
     <Route path="login" component={Login}/>
     <Route path="*" component={NotFound}/>
   </Route>

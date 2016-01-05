@@ -15,8 +15,7 @@ module.exports = {
 			fireRef.onAuth(function(authData){
 				if (authData){ 
 
-					//add to database here??
-					
+					console.log(authData.uid, 'UUUUUUUID')
 					
 					dispatch({
 						type: C.LOGIN_USER,

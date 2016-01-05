@@ -10,7 +10,7 @@
 	margin-top:-15px;
 	background:#222;
 	/*background: url(../pics/bk.jpg) center 0; */
-	background-image: url('../images/gradient.png');
+	background-image: url('../../images/gradient.png');
 	background-repeat:repeat-y;
 	background-size:contain;
 	clear:both;
@@ -32,11 +32,20 @@
 .dashboardHeader h2 {
 	float:left;
 }
-
 .authStatus {
+	line-height:70px;
+	float:left;
+	color:#FFF;
+}
+.addVideo {
 	line-height:70px;
 	float:right;
 	color:#FFF;
+	padding-right:5%;
+}
+.addVideo input {
+	width:250px;
+	padding:5px;
 }
 
 

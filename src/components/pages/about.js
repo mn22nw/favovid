@@ -1,7 +1,7 @@
 "use strict";
 
 import React, {Component} from 'react';
-import styles from '../../css-modules/about.css'
+import styles from '../../css-modules/pages/about.css'
 
 export default class About extends Component{
   render(){

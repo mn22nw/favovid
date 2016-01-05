@@ -70,7 +70,7 @@ module.exports = {
 			if (error){
 				dispatch({type:C.DISPLAY_ERROR,error});
 			} else {
-				dispatch({type:C.AWAIT_NEW_QUOTE_RESPONSE});
+				dispatch({type:C.AWAIT_NEW_VIDEO_RESPONSE});
 				videosRef.push({content,username,uid},function(error){
 					dispatch({type:C.RECEIVE_NEW_QUOTE_RESPONSE});
 					if (error){

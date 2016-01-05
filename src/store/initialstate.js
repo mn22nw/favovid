@@ -16,6 +16,9 @@ module.exports = {
 		username: null,
 		uid: null
 	},
+	users: {
+		submittingnew: false,
+	},
 	videos: {
 		hasreceiveddata: false,
 		submittingnew: false,

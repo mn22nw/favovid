@@ -7,7 +7,7 @@ Gray : #BDBDBD;
 -----------------------------*/
 
 .homeWrapper {
-	background-image:url('../images/home-bk.png');
+	background-image:url('../../images/home-bk.png');
 	background-size:100%;
 	margin-top:65px;
 	min-height:300px;
@@ -16,17 +16,32 @@ Gray : #BDBDBD;
 	
 }
 .startMsg {
-	width:80%;
+	width:70%;
 	display:block;
 	margin:0 auto;
-	text-align: center;
 	padding-bottom:20px;
 }
 .content {
-	width: 80%;
-	background: #FFF;
+	width: 70%;
 	margin:0 auto;
-	height:300px;
+	min-height:300px;
+	height:auto !important;
+	overflow: hidden;
+}
+
+.homeInfo, .signUp {
 	border:2px solid #BDBDBD;
-	padding-left:30px;
+}
+.homeInfo {
+	padding:2%;
+	width:44%;
+	float:left;
+	background:#FFF;
+}
+
+.signUp{
+	padding:2%;
+	width:420px;
+	float:right;
+	background:#FFF;
 }

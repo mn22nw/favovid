@@ -2,6 +2,7 @@ var Redux = require("redux"),
 	authReducer = require("./auth"),
 	videosReducer = require("./videos"),
 	feedbackReducer = require("./feedback"), 
+	usersReducer =  require("./users"),
 	countReducer = require('./count');
 
 //import { combineReducers} from 'redux'
@@ -25,6 +26,7 @@ var rootReducer = Redux.combineReducers({
 	auth: authReducer,
 	videos: videosReducer,
 	feedback: feedbackReducer,
+	users: usersReducer,
 	count: countReducer
 });  
 
