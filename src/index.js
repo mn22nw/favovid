@@ -44,5 +44,5 @@ render(
 // setup Firebase listeners
 setTimeout(function(){
 	store.dispatch( actions.startListeningToAuth() );
-	store.dispatch( actions.startListeningToVideos() );
+	store.dispatch( actions.fetchVideos() );
 });

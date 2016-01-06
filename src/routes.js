@@ -24,6 +24,3 @@ export default (
     <Route path="*" component={NotFound}/>
   </Route>
 );
-
-
-//<Route path="dashboard" component={requireAuthentication(Dashboard)} />

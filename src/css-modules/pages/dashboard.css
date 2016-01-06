@@ -42,10 +42,18 @@
 	float:right;
 	color:#FFF;
 	padding-right:5%;
+
 }
 .addVideo input {
 	width:250px;
 	padding:5px;
 }
 
+.feedbackWrapper {
+	width:450px;
+	display:block;
+	float:right;
+	clear:both;
+	
+}
 

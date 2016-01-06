@@ -7,10 +7,8 @@ var C = require("../constants"),
 	fireRef = new Firebase(C.FIREBASE);
 
 import { updatePath } from 'redux-simple-router';
-
-
-var hej = function() { console.log('hej')}
-
+import actions from '../actions';
+var utils = require("../utils");  //import utils from '../utils'
 
 module.exports = {
 	// called at app start
@@ -24,23 +22,24 @@ module.exports = {
 				       console.log( 'Whats the valuee yo?' , snap.val() );
 
 				       if (snap.val() == null) {
-				       	console.log('YOU MUST REGISTER FIRST....');
+				      	 	var error =  'It seems like you don\'t have an account yet. You can create one here:';
+				       		dispatch({type:C.DISPLAY_ERROR_SIGNUP, error: error});
 				       // TODO - add userfeedback like a message that says - it seems like you don't have an account yet. You can create one here:
-				       // redirect to sign up
+				      		// redirect to sign up
 					       	dispatch(updatePath('/signUp'));
 				       }
-				       else {
 
+
+				       else {
 					       	dispatch({
 							type: C.LOGIN_USER,
 							uid: authData.uid,
 							username: authData.google.displayName || authData.google.username
 							});
 
-					       	// redirect to dashboard
+					       	//redirect to dashboard
 					       	dispatch(updatePath('/dashboard'));
 				       }
-
 				   });
 				
 					

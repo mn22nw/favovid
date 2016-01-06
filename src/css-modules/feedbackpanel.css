@@ -1,0 +1,26 @@
+.error {
+	color:#FFF;
+	padding:5px;
+	background:red;
+}
+.feedback {
+	padding:5px;
+	background:#90E99D;
+}
+.feedbacklist { 
+	width:100%;
+	text-align:left;
+	margin:0 auto;
+}
+.feedbacklist span {
+	margin:20px;
+}
+
+.feedbacklist button {
+	background-color:#FFF;
+	border: none;
+	float:right;
+	margin:0;
+	width:40px;
+	height:20px;
+}

@@ -28,10 +28,7 @@ module.exports = function(currentstate,action){
 			newstate = _.cloneDeep(currentstate);
 			newstate.states[action.youtubeid] = C.PLAY_VIDEO;
 			return newstate;
-		case C.FINISH_QUOTE_EDIT:
-			newstate = _.cloneDeep(currentstate);
-			delete newstate.states[action.qid];
-			return newstate;
+			
 		case C.SUBMIT_QUOTE_EDIT:
 			newstate = _.cloneDeep(currentstate);
 			newstate.states[action.qid] = C.SUBMITTING_QUOTE;
@@ -39,3 +36,5 @@ module.exports = function(currentstate,action){
 		default: return currentstate || initialState.videos;
 	}
 };
+
+// TODO - CLEAN UP!!!!! remove everything related to quotes

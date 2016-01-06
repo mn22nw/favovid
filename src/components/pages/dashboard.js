@@ -8,14 +8,13 @@ import VideoList from  '../videolist'
 import actions from '../../actions';
 import styles from '../../CSS-modules/pages/dashboard.css';
 import { updatePath } from 'redux-simple-router';
+import Feedbackpanel from '../feedbackpanel';
 var C = require("../../constants");
 
 export class Dashboard extends React.Component{	
-  constructor() {
-  super();
- }
+
   render(){ 	
- 	const {logoutUser, auth} = this.props;
+ 	const {auth} = this.props;
 
   	return (
 				<div id={styles.dashboardWrapper} > 
@@ -24,8 +23,11 @@ export class Dashboard extends React.Component{
 								<span>Logged in as {auth.username}.</span>
 						</div>
 						<div className={styles.addVideo}>
-							<input type='text' className='youtube-url' placeholder='paste youtube-url here' />
-							<a href='#' > Add Video </a>
+							<input ref='youtubeUrl' type='text' className='youtube-url' placeholder='paste youtube-url here' />
+							<a href='#' onClick={this.addNewVideo.bind(this)}> Add Video </a>
+						</div>
+						<div className={styles.feedbackWrapper}>
+							<Feedbackpanel />
 						</div>
 					</div>		    			
 		    		<hr />
@@ -35,6 +37,10 @@ export class Dashboard extends React.Component{
 			);
 
 		}
+
+	addNewVideo() {
+		this.props.addNewVideo(this.refs.youtubeUrl.value)
+	}
 };
 
 // now we connect the component to the Redux store:
@@ -44,10 +50,10 @@ var mapStateToProps = function(appState){
 
 var mapDispatchToProps = function(dispatch){
   return {
-    addVideo: function(youtubeid){ dispatch(actions.loadVideo(youtubeid)); }
+    addNewVideo: function(youtubeid){ dispatch(actions.addNewVideo(youtubeid)); }
   }
 };
 
-module.exports = connect(mapStateToProps)(Dashboard); 
+module.exports = connect(mapStateToProps, mapDispatchToProps)(Dashboard); 
 
 

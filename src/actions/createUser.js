@@ -51,6 +51,7 @@ module.exports = {
 						fireRef.child('users/'+authData.uid).set(newUser);
 
 						//Todo- redirect to dashboard....
+						//  
 				}
 			});			
 		}
