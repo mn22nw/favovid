@@ -8,20 +8,42 @@ var C = require("../constants"),
 
 import { updatePath } from 'redux-simple-router';
 
+
+var hej = function() { console.log('hej')}
+
+
 module.exports = {
 	// called at app start
 	startListeningToAuth: function(){
 		return function(dispatch,getState){
 			fireRef.onAuth(function(authData){
-				if (authData){ 
+				if (authData){ 	
 
-					console.log(authData.uid, 'UUUUUUUID')
+					// check if user is registered or not! 
+    				fireRef.child('users/'+authData.uid).once('value', function(snap) {
+				       console.log( 'Whats the valuee yo?' , snap.val() );
+
+				       if (snap.val() == null) {
+				       	console.log('YOU MUST REGISTER FIRST....');
+				       // TODO - add userfeedback like a message that says - it seems like you don't have an account yet. You can create one here:
+				       // redirect to sign up
+					       	dispatch(updatePath('/signUp'));
+				       }
+				       else {
+
+					       	dispatch({
+							type: C.LOGIN_USER,
+							uid: authData.uid,
+							username: authData.google.displayName || authData.google.username
+							});
+
+					       	// redirect to dashboard
+					       	dispatch(updatePath('/dashboard'));
+				       }
+
+				   });
+				
 					
-					dispatch({
-						type: C.LOGIN_USER,
-						uid: authData.uid,
-						username: authData.google.displayName || authData.google.username
-					});
 				} else {
 					if (getState().auth.currently !== C.ANONYMOUS){ // log out if not already logged out
 						dispatch({type:C.LOGOUT});

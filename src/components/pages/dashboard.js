@@ -24,7 +24,7 @@ export class Dashboard extends React.Component{
 								<span>Logged in as {auth.username}.</span>
 						</div>
 						<div className={styles.addVideo}>
-							<input type='text' class='youtube-url' placeholder='paste youtube-url here' />
+							<input type='text' className='youtube-url' placeholder='paste youtube-url here' />
 							<a href='#' > Add Video </a>
 						</div>
 					</div>		    			

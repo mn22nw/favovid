@@ -9,20 +9,13 @@ var C = require("../constants");
 import styles from '../css-modules/registerpanel.css';
 
 class Registerpanel extends Component {
-  createUserWithEmail(e) {
-  	
-	  	e.preventDefault();
-		
-	  	console.log('PROPS ', this.props)
-
+  createUserWithEmail(e) { 	
 	  if (!this.props.users.submitting){
-	  			
-				var email = this.refs.email.value , 
-				password = this.refs.password.value;
-				console.log(email, password);
-				//this.props.signUpUserWithEmail(email, password);
-				email = '';
-				password = '';
+	  			e.preventDefault();
+				this.props.signUpUserWithEmail(this.refs.username.value, this.refs.email.value, this.refs.password.value);
+				this.refs.username.value = '';
+				this.refs.email.value  = '';
+				this.refs.password.value = '';
 			}		
   	}
   render(){
@@ -30,23 +23,23 @@ class Registerpanel extends Component {
       	var p = this.props, users = p.users;
       	return (
 		  <section>
-		  	<div className={styles.registerpanel}>
-		  		<p>Sign up with email</p>		  		
+			  	<div className={styles.registerpanel}>
+			  		<h2>Sign up with</h2>
+			  		<a href='#' onClick={p.signUpUserWithGoogle}>
+			          	<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"  alt='google-logo' />
+			         </a>
 
-		  		<form className="newUserform" onSubmit={this.createUserWithEmail.bind(this)}>
+			  		<p>-OR-</p>
 
-					<input ref='email' type='text' placeholder='email' />
-			  		<input ref='password' type='text' placeholder='password' />
+			         <p>Sign up with email</p>		  		
+			  		<form className="newUserform" onSubmit={this.createUserWithEmail.bind(this)}>
+			  			<input ref='username' type='text' placeholder='Name' />
+						<input ref='email' type='text' placeholder='email' />
+				  		<input ref='password' type='password' placeholder='password' />
 
-					<button type="submit" disabled={p.users.submittingnew}>{p.users.submittingnew ? "Submitting..." : "Submit"}</button>
-				</form> 
-
-		  		<p>-OR-</p>
-				<a href='#' onClick={p.signUpUserWithGoogle}>
-		          	<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"  alt='google-logo' />
-		         </a>
-		           		
-		    </div>
+						<button type="submit" disabled={p.users.submittingnew}>{p.users.submittingnew ? "Submitting..." : "Submit"}</button>
+					</form>    		
+			    </div>
 		  </section>
 		);
   }
@@ -61,7 +54,7 @@ var mapStateToProps = function(appState){
 
 var mapDispatchToProps = function(dispatch){
 	return {
-		signUpUserWithEmail: function(){ dispatch(actions.signUpUserWithEmail()); },
+		signUpUserWithEmail: function(username, email, password ){ dispatch(actions.signUpUserWithEmail(username, email, password)); },
 		signUpUserWithGoogle: function(){ dispatch(actions.signUpUserWithGoogle()); },
 		redirectToDashBoard: function() {dispatch(updatePath('/dashboard'))}
 	}

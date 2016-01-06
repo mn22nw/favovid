@@ -1,7 +1,7 @@
-
 .registerpanel {
 	margin:0 auto;
-	min-height: 200px;
+	min-height: 200px;	
+	width:90%;
 	padding-left:30px;
 }
 
@@ -24,6 +24,12 @@
 	text-decoration: none;
 	font-size:1.3em;
 	margin-left:0;
+	clear:both;
+	overflow: hidden;
+}
+
+.registerpanel p {
+	display:block;
 }
 
 .registerpanel a:active {

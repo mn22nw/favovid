@@ -18,7 +18,7 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home}/>
     <Route path="about" component={About}/>
-    <Route path="dashboard" component={Dashboard} />
+    <Route path="dashboard" component={requireAuthentication(Dashboard)}/>
     <Route path="signUp" component={SignUp}/>
     <Route path="login" component={Login}/>
     <Route path="*" component={NotFound}/>
