@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-var C = require("../constants");
+import C from "../constants";
 import { updatePath } from 'redux-simple-router';
 
 export function requireAuthentication(Component) {
 
     class AuthenticatedComponent extends Component {
 
-        componentWillMount () {
+        componentWillMount() {
             this.checkAuth();
         }
 
-        componentWillReceiveProps (nextProps) {
+        componentWillReceiveProps(nextProps) {
             this.checkAuth();
         }
 
-        checkAuth () {
+        checkAuth() {
             if (this.props.auth.currently != C.LOGGED_IN) {
                 this.props.redirectToStart();
             }
         }
 
-        render () {
+        render() {
             const {auth} = this.props;
 
             return (
                 <div>
-                    {auth.currently == C.LOGGED_IN 
+                    {auth.currently == C.LOGGED_IN
                         ? <Component {...this.props}/>
                         : null
                     }
@@ -36,19 +36,20 @@ export function requireAuthentication(Component) {
         }
     }
 
-    // now we connect the component to the Redux store:
-    var mapStateToProps = function(appState){
+    const mapStateToProps = function (appState) {
         // This component will have access to `appState.auth` through `this.props.auth`
-        return {auth:appState.auth};
+        return {auth: appState.auth};
     };
 
-    var mapDispatchToProps = function(dispatch){
-      return {
-        redirectToStart: function() {dispatch(updatePath('/'))} 
-      }
+    const mapDispatchToProps = function (dispatch) {
+        return {
+            redirectToStart: function () {
+                dispatch(updatePath('/'))
+            }
+        }
     };
 
-    return connect(mapStateToProps, mapDispatchToProps )(AuthenticatedComponent);
+    return connect(mapStateToProps, mapDispatchToProps)(AuthenticatedComponent);
 
 }
 

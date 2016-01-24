@@ -9,51 +9,54 @@ import actions from '../../actions';
 import styles from '../../CSS-modules/pages/dashboard.css';
 import { updatePath } from 'redux-simple-router';
 import Feedbackpanel from '../feedbackpanel';
-var C = require("../../constants");
+import C from "../../constants";
 
-export class Dashboard extends React.Component{	
+export class Dashboard extends React.Component {
 
-  render(){ 	
- 	const {auth} = this.props;
+    render() {
+        const {auth} = this.props;
 
-  	return (
-				<div id={styles.dashboardWrapper} > 
-					<div className={styles.dashboardHeader}>
-						<div className={styles.authStatus}>
-								<span>Logged in as {auth.username}.</span>
-						</div>
-						<div className={styles.addVideo}>
-							<input ref='youtubeUrl' type='text' className='youtube-url' placeholder='paste youtube-url here' />
-							<a href='#' onClick={this.addNewVideo.bind(this)}> Add Video </a>
-						</div>
-						<div className={styles.feedbackWrapper}>
-							<Feedbackpanel />
-						</div>
-					</div>		    			
-		    		<hr />
-		    		
-		    		<VideoList  />
-    			</div>
-			);
+        return (
+            <div id={styles.dashboardWrapper}>
+                <div className={styles.dashboardHeader}>
+                    <div className={styles.authStatus}>
+                        <span>Logged in as {auth.username}.</span>
+                    </div>
+                    <div className={styles.addVideo}>
+                        <input ref='youtubeUrl' type='text' className='youtube-url'
+                               placeholder='paste youtube-url here'/>
+                        <a href='#' onClick={this.addNewVideo.bind(this)}> Add Video </a>
+                    </div>
+                    <div className={styles.feedbackWrapper}>
+                        <Feedbackpanel />
+                    </div>
+                </div>
+                <hr />
 
-		}
+                <VideoList  />
+            </div>
+        );
 
-	addNewVideo() {
-		this.props.addNewVideo(this.refs.youtubeUrl.value)
-	}
-};
+    }
+
+    addNewVideo() {
+        this.props.addNewVideo(this.refs.youtubeUrl.value)
+    }
+}
 
 // now we connect the component to the Redux store:
-var mapStateToProps = function(appState){
-	return {auth:appState.auth};
+const mapStateToProps = function (appState) {
+    return {auth: appState.auth};
 };
 
-var mapDispatchToProps = function(dispatch){
-  return {
-    addNewVideo: function(youtubeid){ dispatch(actions.addNewVideo(youtubeid)); }
-  }
+const mapDispatchToProps = function (dispatch) {
+    return {
+        addNewVideo: function (youtubeid) {
+            dispatch(actions.addNewVideo(youtubeid));
+        }
+    }
 };
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(Dashboard); 
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 
 

@@ -1,9 +1,9 @@
 "use strict";
 
-import React from 'react';
+import {Component} from 'react';
 
-export default class NotFound extends React.Component{
-  render(){
-    return <h2>Not Found</h2>;
-  }
+export default class NotFound extends Component {
+    render() {
+        return <h2>Not Found</h2>;
+    }
 };

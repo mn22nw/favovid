@@ -2,9 +2,9 @@
 This is the initial state of the Redux Store.
 */
 
-var C = require("../constants");
+import C from "../constants";
 
-module.exports = {
+export default {
 	feedback: [
 	],
 	auth: {
@@ -13,7 +13,7 @@ module.exports = {
 		uid: null
 	},
 	users: {
-		submittingnew: false,
+		submittingnew: false
 	},
 	videos: {
 		hasreceiveddata: false,

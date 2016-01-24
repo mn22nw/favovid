@@ -1,17 +1,17 @@
-const constants = require('../constants');
+import C from '../constants';
 
 function increase(n) {
   return {
-    type: constants.INCREASE,
+    type: C.INCREASE,
     amount: n
   };
 }
 
 function decrease(n) {
   return {
-    type: constants.DECREASE,
+    type: C.DECREASE,
     amount: n
   };
 }
 
-module.exports = { increase, decrease };
+export default { increase, decrease };
