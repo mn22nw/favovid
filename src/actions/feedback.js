@@ -3,9 +3,9 @@ This module contains action creators dealing with `appState.feedback`
 The only thing that can happen here is that user dismisses feedback.
 */
 
-var C = require("../constants");
+import C from "../constants";
 
-module.exports = {
+export default {
 	dismissFeedback: function(num){
 		return {type:C.DISMISS_FEEDBACK,num:num};
 	}

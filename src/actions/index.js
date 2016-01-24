@@ -1,8 +1,7 @@
-var authActions = require("./auth"),
-	videosActions = require("./videos"),
-	feedbackActions = require("./feedback"),
-	userActions = require("./createUser"),
-	_ = require("lodash"),
-	counterActions = require('./count');
+import authActions from "./auth";
+import videosActions from "./videos";
+import feedbackActions from "./feedback";
+import userActions from "./createUser";
+import counterActions from './count';
 
-module.exports = _.assign({},authActions,videosActions,feedbackActions, userActions, counterActions);
+export default Object.assign({}, authActions, videosActions, feedbackActions, userActions, counterActions);
